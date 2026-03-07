@@ -1,3 +1,23 @@
-@import 'variables.scss';
+.dark-theme {
+  background: #121212;
+  color: white;
+}
 
-.something { color: $something; }
+.dark-theme .navbar {
+  background: #1e1e1e !important;
+}
+
+.dark-theme a,
+.dark-theme .menu a {
+  color: #ddd !important;
+}
+
+.dark-theme .contact-outline {
+  border-color: #bbb;
+  color: #bbb;
+}
+
+.dark-theme .contact-outline:hover {
+  background: #bbb;
+  color: #121212;
+}

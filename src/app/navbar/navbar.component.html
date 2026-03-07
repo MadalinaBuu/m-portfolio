@@ -1,0 +1,36 @@
+<nav class="navbar" [class.scrolled]="scrolled">
+  <div class="container">
+
+    <!-- LOGO -->
+    <a class="logo" routerLink="/">
+      madalina<span class="dot">.</span>
+    </a>
+
+    <!-- RIGHT SIDE (MOBILE) -->
+    <div class="right-mobile">
+      <button class="theme-btn" (click)="toggleTheme()">
+        <i [class]="isDark ? 'bi bi-sun' : 'bi bi-moon'"></i>
+      </button>
+
+      <div class="hamburger" [class.open]="menuOpen" (click)="toggleMenu()">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+
+    <!-- MENIU -->
+    <ul class="menu" [class.open]="menuOpen">
+      <li><a routerLink="/" (click)="closeMenu()">Home</a></li>
+      <li><a routerLink="/about" (click)="closeMenu()">About me</a></li>
+      <li><a routerLink="/work" (click)="closeMenu()">My Work</a></li>
+      <li><a routerLink="/contact" (click)="closeMenu()">Contact me</a></li>
+    </ul>
+
+    <!-- RIGHT SIDE (DESKTOP) -->
+    <div class="right-side desktop-only">
+      <button class="theme-btn" (click)="toggleTheme()">
+        <i [class]="isDark ? 'bi bi-sun' : 'bi bi-moon'"></i>
+      </button>
+    </div>
+
+  </div>
+</nav>
