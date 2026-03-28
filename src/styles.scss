@@ -6,7 +6,13 @@ body {
 
 .dark-theme {
   background: rgb(33 1 36 / var(--tw-bg-opacity, 1));
+  color: white;
 }
+
+.dark-theme .about .intro {
+  color: #eee !important;
+}
+
 
 .dark-theme a,
 .dark-theme .menu a {
@@ -20,5 +26,5 @@ body {
 
 .dark-theme .contact-outline:hover {
   background: #bbb;
-  color: #121212;
+  //color: #121212;
 }
