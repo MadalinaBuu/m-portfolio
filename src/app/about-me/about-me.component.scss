@@ -146,14 +146,22 @@
 /* Dark theme override */
 body.dark-theme .about {
 
+    color: #2a2a2a;
   .description,
   .info-box p,
   .info-box h5 {
-    color: #eee;
+    color: #2a2a2a;
   }
 
   .info-box {
     background: #2a2a2a;
     box-shadow: none;
+  }
+}
+
+:host-context(.dark-theme) {
+  .info-boxes,
+  .info-boxes * {
+    color: #2a2a2a !important;
   }
 }

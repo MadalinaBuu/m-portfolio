@@ -1,0 +1,69 @@
+@import '_variables';
+
+.fixed-footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 14px 0;
+  background: white;
+  border-top: 1px solid #eee;
+  display: flex;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 7px;
+  font-size: 1rem;
+  color: #222;
+}
+
+.brand {
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.brand .dot {
+  color: #a855f7; /* mov elegant */
+}
+
+.email {
+  opacity: 0.7;
+}
+
+/* Dark mode */
+.dark-theme .fixed-footer {
+  background: #1a1a1a;
+  border-top: 1px solid #333;
+}
+
+.dark-theme .footer-content {
+  color: #eee;
+}
+
+.dark-theme .email {
+  opacity: 0.8;
+}
+
+:host-context(.dark-theme) {
+  .fixed-footer {
+    background: #1a1a1a !important;
+    border-top: 1px solid #333 !important;
+  }
+
+  .footer-content {
+    color: #eee !important;
+  }
+
+  .email {
+    opacity: 0.8 !important;
+  }
+
+  .brand .dot {
+    color: #a855f7 !important; // păstrezi movul elegant
+  }
+}
