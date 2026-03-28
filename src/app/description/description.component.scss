@@ -1,0 +1,51 @@
+.about {
+  padding: 10rem;
+
+  .avatar img {
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    border: 3px solid #e6e6e6;
+  }
+
+  .title {
+    font-size: 2.2rem;
+    font-weight: 600;
+
+    span {
+      color: $purple-color;
+    }
+  }
+
+  .subtitle {
+    font-size: 1.2rem;
+    color: #666;
+    font-weight: 400;
+  }
+
+  .intro {
+    font-size: 1.1rem;
+    color: #444;
+    line-height: 1.6;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .btn-primary {
+    background: linear-gradient(90deg, #6c63ff, #ff6584);
+    border: none;
+    padding: 10px 24px;
+    border-radius: 8px;
+  }
+
+  .btn-outline-secondary {
+    padding: 10px 24px;
+    border-radius: 8px;
+  }
+}
+
+@media (max-width: 576px) {
+  .title {
+    font-size: 1.8rem;
+  }
+}
