@@ -1,7 +1,7 @@
 @import '_variables';
 
-.about {
-  padding: 10rem;
+.description {
+  padding-top: $pad-top;
 
   .avatar img {
     width: 180px;
@@ -40,7 +40,7 @@
 }
 
 @media (max-width: 576px) {
-  .about {
+  .description {
     padding: 5rem 1rem;
   }
 

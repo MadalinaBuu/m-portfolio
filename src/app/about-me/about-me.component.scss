@@ -1,0 +1,159 @@
+@import 'variables';
+
+.about {
+  padding: 6rem 0;
+
+  .avatar-wrapper {
+    position: relative;
+
+    .avatar-img {
+      width: 100%;
+      height: 100%;
+      border-radius: 2rem;
+      object-fit: cover;
+    }
+
+    /* Iconiță statică în centru */
+    .badge-static {
+      position: absolute;
+      bottom: -3px;
+      right: 47px;
+      width: 10%;
+      height: 10%;
+      z-index: 4;
+      object-fit: contain;
+      pointer-events: none;
+    }
+
+    /* Badge rotativ */
+    .badge-corner {
+      position: absolute;
+      bottom: -95px;
+      right: -45px;
+      width: 55%;
+      height: 55%;
+      animation: spin 12s linear infinite;
+      z-index: 3;
+      object-fit: contain;
+      pointer-events: none;
+    }
+  }
+
+  @keyframes spin {
+    from {
+      transform: rotate(0deg);
+    }
+
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  .section-title {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+  }
+
+  .description {
+    font-size: 1.1rem;
+    color: #444;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+  }
+
+  .info-boxes {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+
+    .info-box {
+      flex: 1;
+      min-width: 150px;
+      background: #f8f8f8;
+      padding: 1rem;
+      border-radius: 10px;
+      text-align: center;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+      transition: all 0.25s ease;
+
+      &:hover {
+        background: #ffe6f2; // roz pal
+        transform: translate(4px, -4px); // mișcare spre dreapta-sus
+
+        /* shadow negru în colțul de sus */
+        box-shadow:
+          -6px -6px 14px rgba(0, 0, 0, 0.25), // shadow negru sus-stânga
+          0 6px 14px rgba(0, 0, 0, 0.12); // shadow normal jos
+      }
+
+      h5 {
+        font-weight: 700;
+        margin-bottom: 0.5rem;
+      }
+
+      p {
+        padding-top: 1rem;
+        margin: 0;
+        font-size: 0.9rem;
+      }
+
+      div img {
+        width: 10%;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+      }
+    }
+
+
+
+
+  }
+
+}
+
+.tools {
+  margin-top: 2rem;
+
+  p {
+    font-weight: 600;
+    margin-bottom: 1rem;
+  }
+
+  .tools-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1.5rem;
+
+    img {
+      width: 55px; // toate egale
+      height: 55px; // toate egale
+      object-fit: contain;
+      flex: 1; // ocupă spațiu egal
+      max-width: 70px; // limitează dimensiunea
+      opacity: 0.95;
+      transition: transform 0.2s ease;
+
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+  }
+}
+
+
+/* Dark theme override */
+body.dark-theme .about {
+
+  .description,
+  .info-box p,
+  .info-box h5 {
+    color: #eee;
+  }
+
+  .info-box {
+    background: #2a2a2a;
+    box-shadow: none;
+  }
+}
