@@ -2,7 +2,7 @@
   <div class="container">
 
     <!-- LOGO -->
-    <a class="logo" routerLink="/">
+    <a class="logo" (click)="goTo('description')">
       madalina<span class="dot">.</span>
     </a>
 
@@ -19,10 +19,10 @@
 
     <!-- MENIU -->
     <ul class="menu" [class.open]="menuOpen">
-      <li><a routerLink="/" (click)="closeMenu()">Home</a></li>
-      <li><a routerLink="/about" (click)="closeMenu()">About me</a></li>
-      <li><a routerLink="/work" (click)="closeMenu()">My Work</a></li>
-      <li><a routerLink="/contact" (click)="closeMenu()">Contact me</a></li>
+      <li><a (click)="goTo('description')">Home</a></li>
+      <li><a (click)="goTo('about')">About me</a></li>
+      <li><a (click)="goTo('work')">My Work</a></li>
+      <li><a (click)="goTo('contact')">Contact me</a></li>
     </ul>
 
     <!-- RIGHT SIDE (DESKTOP) -->

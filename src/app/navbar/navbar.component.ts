@@ -1,4 +1,6 @@
 import { Component, HostListener } from '@angular/core';
+import { Router } from '@angular/router';
+import { ViewportScroller } from '@angular/common';
 
 @Component({
   selector: 'app-navbar',
@@ -9,6 +11,11 @@ export class NavbarComponent {
   scrolled = false;
   menuOpen = false;
   isDark = false;
+
+  constructor(
+    private router: Router,
+    private scroller: ViewportScroller
+  ) {}
 
   @HostListener('window:scroll')
   onScroll() {
@@ -26,5 +33,15 @@ export class NavbarComponent {
   toggleTheme() {
     this.isDark = !this.isDark;
     document.body.classList.toggle('dark-theme');
+  }
+
+  goTo(fragment: string) {
+    this.closeMenu();
+
+    this.router.navigate(['/'], { fragment }).then(() => {
+      setTimeout(() => {
+        this.scroller.scrollToAnchor(fragment);
+      }, 50);
+    });
   }
 }
