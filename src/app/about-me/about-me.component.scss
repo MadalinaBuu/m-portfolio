@@ -5,37 +5,52 @@
 
   .avatar-wrapper {
     position: relative;
+    width: 100%;
+    max-width: 320px;
+    margin: 0 auto;
 
     .avatar-img {
       width: 100%;
-      height: 100%;
+      height: auto;
       border-radius: 2rem;
       object-fit: cover;
     }
 
-    /* Iconiță statică în centru */
     .badge-static {
       position: absolute;
-      bottom: -3px;
-      right: 47px;
-      width: 10%;
-      height: 10%;
+      bottom: 2%;
+      right: 7%;
+      width: 12%;
+      height: auto;
       z-index: 4;
       object-fit: contain;
       pointer-events: none;
     }
 
-    /* Badge rotativ */
-    .badge-corner {
+    .badge-corner-wrapper {
       position: absolute;
-      bottom: -95px;
-      right: -45px;
-      width: 55%;
-      height: 55%;
-      animation: spin 12s linear infinite;
+      bottom: -18%;
+      right: -12%;
+      width: 50%;
+      height: auto;
       z-index: 3;
-      object-fit: contain;
       pointer-events: none;
+    }
+
+    .badge-corner {
+      width: 100%;
+      height: auto;
+      display: block;
+
+      animation: spin 12s linear infinite;
+      transform-origin: center;
+      will-change: transform;
+      backface-visibility: hidden;
+
+      object-fit: contain;
+
+      display: block;
+      aspect-ratio: 1 / 1;
     }
   }
 
@@ -78,13 +93,12 @@
       transition: all 0.25s ease;
 
       &:hover {
-        background: #ffe6f2; // roz pal
-        transform: translate(4px, -4px); // mișcare spre dreapta-sus
+        background: #ffe6f2;
+        transform: translate(4px, -4px);
 
-        /* shadow negru în colțul de sus */
         box-shadow:
-          -6px -6px 14px rgba(0, 0, 0, 0.25), // shadow negru sus-stânga
-          0 6px 14px rgba(0, 0, 0, 0.12); // shadow normal jos
+          -6px -6px 14px rgba(0, 0, 0, 0.25),
+          0 6px 14px rgba(0, 0, 0, 0.12);
       }
 
       h5 {
@@ -99,19 +113,15 @@
       }
 
       div img {
-        width: 10%;
-        padding-top: 1rem;
-        padding-bottom: 1rem;
+        width: 32px;
+        height: 32px;
+        padding: 0.5rem 0;
       }
     }
-
-
-
-
   }
-
 }
 
+/* Tools */
 .tools {
   margin-top: 2rem;
 
@@ -125,13 +135,14 @@
     justify-content: space-between;
     align-items: center;
     gap: 1.5rem;
+    flex-wrap: wrap;
 
     img {
-      width: 55px; // toate egale
-      height: 55px; // toate egale
+      width: 50px;
+      height: 50px;
       object-fit: contain;
-      flex: 1; // ocupă spațiu egal
-      max-width: 70px; // limitează dimensiunea
+      flex: 1;
+      max-width: 70px;
       opacity: 0.95;
       transition: transform 0.2s ease;
 
@@ -142,11 +153,10 @@
   }
 }
 
-
-/* Dark theme override */
+/* Dark theme */
 body.dark-theme .about {
+  color: #2a2a2a;
 
-    color: #2a2a2a;
   .description,
   .info-box p,
   .info-box h5 {
@@ -160,8 +170,35 @@ body.dark-theme .about {
 }
 
 :host-context(.dark-theme) {
+
   .info-boxes,
   .info-boxes * {
     color: #2a2a2a !important;
+  }
+}
+
+/* 📱 MOBILE */
+@media (max-width: 576px) {
+  .about {
+    padding: 4rem 0;
+
+    .avatar-wrapper {
+      max-width: 260px;
+
+      .badge-corner-wrapper {
+        bottom: -15%;
+        right: -8%;
+        width: 45%;
+      }
+
+      .badge-static {
+        right: 10%;
+        width: 14%;
+      }
+    }
+
+    .tools-row {
+      justify-content: center;
+    }
   }
 }

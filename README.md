@@ -1,59 +1,110 @@
-# MPortfolio
+# m-portfolio
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.5.
+A personal portfolio website built with Angular for a backend developer client — designed to be clean, modern, and fully responsive.
 
-## Development server
+🌐 **Live site:** [madalinabuu.github.io/m-portfolio](https://madalinabuu.github.io/m-portfolio/)
 
-To start a local development server, run:
+---
+
+## Features
+
+- 🌙 **Dark / Light mode toggle** — manual theme switching with smooth transitions
+- 📝 **Working contact form** — powered by [Web3Forms API](https://web3forms.com/), no backend required
+- 🔄 **Rotating text animation** — dynamic hero section with CSS animation
+- 📱 **Fully responsive** — mobile-first layout built with Bootstrap
+- 🚀 **Deployed with GitHub Pages**
+
+---
+
+## Tech Stack
+
+| Layer | Technology |
+|-------|-----------|
+| Framework | Angular |
+| Styling | SCSS, Bootstrap |
+| Contact Form | Web3Forms API |
+| Deployment | GitHub Pages |
+
+---
+
+## Screenshots
+
+### Light Mode
+![Light mode](screenshots/light-screenshot.png)
+
+### Dark Mode
+![Dark mode](screenshots/dark-screenshot.png)
+
+---
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js (v16+)
+- Angular CLI
 
 ```bash
+npm install -g @angular/cli
+```
+
+### Installation
+
+```bash
+# Clone the repository
+git clone https://github.com/MadalinaBuu/m-portfolio.git
+
+# Navigate into the project
+cd m-portfolio
+
+# Install dependencies
+npm install
+
+# Start the development server
 ng serve
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+Then open your browser at `http://localhost:4200`.
 
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+### Build for production
 
 ```bash
-ng generate component component-name
+ng build --configuration production
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+### Deploy to GitHub Pages
 
 ```bash
-ng generate --help
+ng deploy --base-href=/m-portfolio/
 ```
 
-## Building
+---
 
-To build the project run:
+## Project Structure
 
-```bash
-ng build
+```
+src/
+├── app/
+│   ├── components/        # Reusable UI components
+│   ├── pages/             # Page-level components (Home, About, Work, Contact)
+│   └── app.component.*    # Root component
+├── assets/                # Images and static files
+└── styles/                # Global SCSS styles and theme variables
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+---
 
-## Running unit tests
+## Contact Form Setup
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+This project uses [Web3Forms](https://web3forms.com/) for handling contact form submissions without a backend.
 
-```bash
-ng test
-```
+To use your own access key:
+1. Create a free account at [web3forms.com](https://web3forms.com/)
+2. Get your access key
+3. Replace the key in the contact component
 
-## Running end-to-end tests
+---
 
-For end-to-end (e2e) testing, run:
+## License
 
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Built by [Mădălina Ciucioiu](https://github.com/MadalinaBuu) for a client project. Feel free to use as inspiration.

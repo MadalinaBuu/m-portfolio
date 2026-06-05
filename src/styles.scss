@@ -2,15 +2,18 @@
 
 #description,
 #about,
-#contact,
-#my-work
-
-{
+#work,
+#contact {
   scroll-margin-top: 80px; // cât e navbar-ul tău
 }
 
 body {
   background-color: #e183c263;
+}
+
+html,
+body {
+  overflow-x: hidden;
 }
 
 .dark-theme {
@@ -42,5 +45,4 @@ body {
 
 .dark-theme .contact-outline:hover {
   background: #bbb;
-  //color: #121212;
 }
